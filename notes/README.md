@@ -9,27 +9,37 @@ The contents of the Dockerfile depend on the image it describes. You can open yo
 
 Now to write one you can use the commands as follows:
 -FROM python:3.11  
-	Here ‘FROM’ is used to describe source  for base image as we can see ‘python:3.11’ is used as source of the  base image.
- -RUN echo hello world!
-	Here ‘RUN’ is used to run and execute a command you can also used it to install packages or update your image.
- -WORKDIR relative/path/of/working/directory
-	Here ‘WORKDIR’ give directions towards the working directory. 
- -USER user1
-	Here ‘USER’ is to specify which user will be using this file. Either it could be root or you can specify as per you like.
- -SHELL [‘pwsh’,’command’]
-	Here ‘SHELL’ is used to run commands in shell
- -RUN “hello” | out-file – path /demo/message.txt|
-	Now here when you this run this command under shell, you’ll see ‘messagge.txt’ file getting created with hello written inside.
- -ENV app_hosts=’0.0.0.0/0’
-	Here ‘ENV’  is used to declare environmental variable in your dockerfile.
+Here ‘FROM’ is used to describe source  for base image as we can see ‘python:3.11’ is used as source of the  base image.
+
+-RUN echo hello world!
+Here ‘RUN’ is used to run and execute a command you can also used it to install packages or update your image.
+
+-WORKDIR relative/path/of/working/directory
+Here ‘WORKDIR’ give directions towards the working directory. 
+
+-USER user1
+Here ‘USER’ is to specify which user will be using this file. Either it could be root or you can specify as per you like.
+ 
+-SHELL [‘pwsh’,’command’]
+Here ‘SHELL’ is used to run commands in shell
+ 
+-RUN “hello” | out-file – path /demo/message.txt|
+Now here when you this run this command under shell, you’ll see ‘messagge.txt’ file getting created with hello written inside.
+ 
+-ENV app_hosts=’0.0.0.0/0’
+Here ‘ENV’  is used to declare environmental variable in your dockerfile.
+ 
  -COPY app.py /code/file.txt
-	This command helps you in copying everything from source(app.py) to destination(/code/file.txt)
- -ADD <linkofanypakageyouwantoinstall>
- 	This command is similar to COPY command but here you can also add link to download packages. 
-  -ENTRYPOINT [‘npm’,’cmd’]
-	Defines the executable that will always run when the container starts. Cannot be easily overridden when running the container (unless using the --entrypoint flag).
- -CMD ["apache2ctl", "-DFOREGROUND"]
-	Provides default arguments for the ENTRYPOINT. Can be easily overridden when running the container using command line arguments.
+This command helps you in copying everything from source(app.py) to destination(/code/file.txt)
+ 
+-ADD <linkofanypakageyouwantoinstall>
+This command is similar to COPY command but here you can also add link to download packages. 
+ 
+-ENTRYPOINT [‘npm’,’cmd’]
+Defines the executable that will always run when the container starts. Cannot be easily overridden when running the container (unless using the --entrypoint flag).
+ 
+-CMD ["apache2ctl", "-DFOREGROUND"]
+Provides default arguments for the ENTRYPOINT. Can be easily overridden when running the container using command line arguments.
 
 ### DOCKER COMMANDS ( MUST KNOW COMMANDS)
 o	Docker build: Creates an image from a Dockerfile.
